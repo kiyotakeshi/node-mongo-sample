@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "b3b28b57-d31f-448b-8744-acf0aa7431ff",
+		"name": "node-mongo-sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15499051"
+	},
+	"item": [
+		{
+			"name": "get blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/blogs",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "updateTitle",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "updateSummary",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "/update-image1.jpg",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "update hoge fuga",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/blogs",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get blog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/blogs/62d4bd0ee666947580fa404b",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"blogs",
+						"62d4bd0ee666947580fa404b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blog",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/blogs/62d4b8a5f64d25b98be15bd0",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"blogs",
+						"62d4b8a5f64d25b98be15bd0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update blog",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "updateTitle",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "updateSummary",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "/update-image1.jpg",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "update hoge fuga",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/blogs/62d4b8a5f64d25b98be15bd0",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"blogs",
+						"62d4b8a5f64d25b98be15bd0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
