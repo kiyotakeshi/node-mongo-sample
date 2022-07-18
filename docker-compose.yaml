@@ -1,0 +1,34 @@
+version: '3.1'
+
+services:
+  mongo:
+    container_name: nodejs-mongo-sample
+    image: mongo:5.0.9
+    restart: always
+    environment:
+      # if you set root user, admin database will be created
+      # @see https://github.com/docker-library/mongo/blob/3f117ac35a947ddff307aee85ecd5abe9e3a0fe1/4.1/docker-entrypoint.sh#L303-L313
+      # MONGO_INITDB_ROOT_USERNAME: root
+      # MONGO_INITDB_ROOT_PASSWORD: 1qazxsw2
+      MONGO_INITDB_DATABASE: blog
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db
+      - ./configdb:/data/configdb
+      # .sh or .js file exec
+      # @see https://github.com/docker-library/mongo/blob/3f117ac35a947ddff307aee85ecd5abe9e3a0fe1/4.1/docker-entrypoint.sh#L320-L321
+      - ./mongo/init:/docker-entrypoint-initdb.d
+
+  mongo-express:
+    container_name: nodejs-mongo-express-sample
+    image: mongo-express
+    restart: always
+    ports:
+      - 9080:8081
+      # if set MONGO_INITDB_ROOT* value
+      # environment:
+      # ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      # ME_CONFIG_MONGODB_ADMINPASSWORD: 1qazxsw2
+    depends_on:
+      - mongo

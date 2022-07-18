@@ -7,14 +7,24 @@ require('dotenv').config();
 const username = process.env.USER_NAME;
 const password = process.env.PASSWORD;
 const host = process.env.HOST;
-const database = `blog`;
+const database = process.env.DATABASE;
+const mongodbAtlasUsed = process.env.MONGODB_ATLAS_USED;
 
 // connecting to MongoDB
-mongoose.connect(`mongodb+srv://${username}:${password}@${host}/${database}?retryWrites=true&w=majority`)
+let mongodb_endpoint
+
+if (mongodbAtlasUsed === "true"){
+    mongodb_endpoint = `mongodb+srv://${username}:${password}@${host}/${database}?retryWrites=true&w=majority`
+} else {
+    mongodb_endpoint = `mongodb://${username}:${password}@${host}/${database}?retryWrites=true&w=majority`
+}
+
+mongoose.connect(mongodb_endpoint)
     .then(() => {
         console.log("Success: Connected to MongoDB")
     })
     .catch((error) => {
+        console.log(error)
         console.error("Failure: Unconnected to MongoDB")
     })
 

@@ -1,0 +1,5 @@
+[
+  {"_id":{"$oid":"62d4be73f66d335f1c41f151"},"title":"sample1","summary":"sample1","image":"/image1.jpg","content":"hoge fuga1","__v":{"$numberInt":"0"}},
+  {"_id":{"$oid":"62d4be73f66d335f1c41f152"},"title":"sample2","summary":"sample2","image":"/image2.jpg","content":"hoge fuga2","__v":{"$numberInt":"0"}},
+  {"_id":{"$oid":"62d4be73f66d335f1c41f153"},"title":"sample3","summary":"sample3","image":"/image3.jpg","content":"hoge fuga3","__v":{"$numberInt":"0"}}
+]
